@@ -3,23 +3,7 @@
     <title>MDIX - Conversor Bitcoin para Real</title>
   </Head>
   <div class="min-h-screen bg-white dark:bg-black">
-    <!-- Botão flutuante para instalar PWA -->
-    <UButton
-      v-if="canInstall"
-      icon="i-lucide-download"
-      color="primary"
-      variant="outline"
-      class="fixed bottom-6 right-6 z-50 shadow-xl"
-      @click="installPWA"
-    >
-      Adicionar à tela inicial
-    </UButton>
-    <div v-if="showIosTip" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-black/90 text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-2 text-sm">
-      <UIcon name="i-lucide-info" class="w-4 h-4 text-primary-400" />
-      Para instalar, toque em <span class="font-bold">Compartilhar</span> e depois <span class="font-bold">Adicionar à Tela de Início</span>.
-      <button class="ml-2 text-primary-400 underline" @click="showIosTip = false">Fechar</button>
-    </div>
-    <!-- Header minimalista -->
+    <!-- Header -->
     <header class="sticky top-0 z-50 w-full border-b border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-black/80 backdrop-blur-sm">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
@@ -88,7 +72,7 @@
                 </div>
     </section>
 
-    <!-- Divisor Visual -->
+    <!-- Divisor -->
     <div class="relative py-16">
       <div class="absolute inset-0 flex items-center">
         <div class="w-full border-t border-neutral-200 dark:border-neutral-800"></div>
@@ -126,7 +110,7 @@
           <div class="rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-transparent shadow-none hover:shadow-2xl hover:border-primary-400/60 dark:hover:border-primary-400/40 transition-all duration-300 p-8 flex flex-col items-center text-center min-h-[480px] backdrop-blur-[2px]">
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-1 bg-gradient-to-r from-primary-400/30 via-transparent to-primary-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
             
-            <!-- Background pattern sutil -->
+            <!-- Background -->
             <div class="absolute inset-0 opacity-[0.02] dark:opacity-[0.03]">
               <div class="absolute top-4 right-4 w-24 h-24 bg-primary-500 rounded-full"></div>
               <div class="absolute bottom-4 left-4 w-16 h-16 bg-primary-400 rounded-full"></div>
@@ -147,7 +131,7 @@
                     Quantidade de Bitcoin
                   </label>
                   <div class="relative group">
-                    <!-- Input minimalista com animações -->
+                    <!-- Input -->
                     <div class="relative">
                       <div class="flex items-center border-2 border-neutral-300 dark:border-neutral-600 rounded-lg px-3 py-2 transition-all duration-500 group-hover:border-primary-400 dark:group-hover:border-primary-400 focus-within:border-green-500 dark:focus-within:border-green-500 focus-within:shadow-lg focus-within:shadow-green-500/20">
                         <UIcon name="i-lucide-bitcoin" class="w-4 h-4 text-neutral-400 mr-2 transition-colors duration-300" :class="{ 'text-green-500 animate-pulse': isInputFocused, 'text-green-500': conversionResult }" />
@@ -170,7 +154,7 @@
                   </div>
                 </div>
 
-                <!-- Botão converter apenas com borda -->
+                <!-- Botão converter -->
                 <div class="relative group">
                   <button
                     type="submit"
@@ -178,7 +162,7 @@
                     class="w-full h-10 border-2 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 hover:border-primary-400 dark:hover:border-primary-400 focus:border-primary-500 dark:focus:border-primary-500 disabled:border-neutral-200 dark:disabled:border-neutral-700 disabled:text-neutral-400 dark:disabled:text-neutral-500 disabled:cursor-not-allowed rounded-lg font-medium text-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 bg-transparent"
                     :class="{ 'border-green-500 text-green-600 dark:text-green-400': bitcoinAmount && bitcoinAmount > 0 }"
                   >
-                    <!-- Conteúdo do botão -->
+                    <!-- Conteudo do botão -->
                     <div class="relative flex items-center gap-2">
                       <div v-if="isLoading" class="w-4 h-4 border-2 border-current/30 border-t-current rounded-full animate-spin"></div>
                       <UIcon v-else name="i-lucide-calculator" class="w-4 h-4" />
@@ -204,7 +188,7 @@
                         <div class="absolute inset-0 w-6 h-6 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                       </div>
                       
-                      <!-- Texto animado -->
+                      <!-- Texto Procurando DAdosa -->
                       <div class="flex items-center gap-1">
                         <span class="text-sm font-medium text-blue-700 dark:text-blue-300">Procurando dados</span>
                         <div class="flex gap-1">
@@ -220,7 +204,7 @@
                   </div>
                 </Transition>
 
-                <!-- Preço atual com design melhorado -->
+                <!-- Preço atual -->
                 <div class="bg-gradient-to-r from-neutral-50 to-neutral-100 dark:from-neutral-900/50 dark:to-neutral-800/50 rounded-xl p-4 border border-neutral-200 dark:border-neutral-800 backdrop-blur-sm shadow-sm">
                   <div class="flex items-center justify-between">
                     <div class="flex items-center space-x-2 text-sm text-neutral-600 dark:text-neutral-400">
@@ -243,7 +227,7 @@
                   </div>
                 </div>
 
-                <!-- Resultado com animações elegantes -->
+                <!-- Resultado -->
                 <Transition
                   enter-active-class="transition-all duration-500 ease-out"
                   enter-from-class="opacity-0 transform translate-y-4 scale-95"
@@ -276,7 +260,7 @@
               </div>
                 </Transition>
 
-                <!-- Erro com animação -->
+                <!-- Erro -->
                 <Transition
                   enter-active-class="transition-all duration-300 ease-out"
                   enter-from-class="opacity-0 transform translate-y-2"
@@ -297,7 +281,7 @@
             </form>
             </div>
             
-            <!-- Badge e informações adicionais -->
+            <!-- Badge e informações adicionaiss -->
             <div class="absolute right-4 top-4 bg-primary-400/10 text-primary-500 text-xs px-2 py-0.5 rounded-full font-semibold tracking-wide shadow-sm border border-primary-400/20 select-none pointer-events-none">
               Ativo
             </div>
@@ -350,7 +334,7 @@
         </div>
       </section>
 
-    <!-- Divisor Visual -->
+    <!-- Divisor -->
     <div class="relative py-16">
       <div class="absolute inset-0 flex items-center">
         <div class="w-full border-t border-neutral-200 dark:border-neutral-800"></div>
@@ -366,7 +350,7 @@
       </div>
     </div>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about" class="py-24 px-4 sm:px-6 lg:px-8">
         <div class="container mx-auto max-w-6xl">
         <div class="text-center mb-16">
@@ -493,7 +477,6 @@ const canInstall = ref(false)
 const showIosTip = ref(false)
 let deferredPrompt: any = null
 
-// Proteção: Limite de conversões e cooldown
 const MAX_CONVERSIONS = 10
 const COOLDOWN_MS = 2000
 const conversionCount = ref(0)
@@ -525,7 +508,7 @@ const fetchBitcoinPrices = async () => {
     if (data.bitcoin && data.bitcoin.brl) {
       bitcoinPrice.value = data.bitcoin
       lastUpdateTime.value = new Date().toLocaleString('pt-BR')
-      error.value = '' // Limpar erro anterior
+      error.value = '' 
     } else {
       throw new Error('Dados do Bitcoin não encontrados')
     }
