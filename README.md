@@ -44,4 +44,4 @@ MIT
 
 ---
 
-Desenvolvido por [gustavofvs](https://github.com/gustavofvs/mdix)
+Desenvolvido por [gustavofvs](https://github.com/gustavofvs)
