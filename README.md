@@ -2,8 +2,6 @@
 
 Conversor minimalista de Bitcoin para Real
 
-![MDIX Banner](https://raw.githubusercontent.com/gustavofvs/mdix/main/.github/mdix-banner.png)
-
 ## Sobre o projeto
 
 O **MDIX** é um conversor de Bitcoin para Real brasileiro, com preços em tempo real, design minimalista e foco total na experiência do usuário. Inspirado em referências como Framer, Apple e shadcn/ui, o site utiliza glassmorphism, microinterações e responsividade para entregar uma experiência elegante e moderna.
@@ -40,12 +38,10 @@ npm run dev
 ```
 Acesse: [http://localhost:3000](http://localhost:3000)
 
-## Contribuição
-Contribuições são bem-vindas! Abra uma issue ou pull request.
 
 ## Licença
 MIT
 
 ---
 
-Desenvolvido por [gustavofvs](https://github.com/gustavofvs/mdix)
+Desenvolvido por [gustavofvs](https://github.com/gustavofvs)
