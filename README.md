@@ -38,8 +38,6 @@ npm run dev
 ```
 Acesse: [http://localhost:3000](http://localhost:3000)
 
-## Contribuição
-Contribuições são bem-vindas! Abra uma issue ou pull request.
 
 ## Licença
 MIT
