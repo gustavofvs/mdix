@@ -1,4 +1,7 @@
 <template>
+  <Head>
+    <title>MDIX - Conversor Bitcoin para Real</title>
+  </Head>
   <div class="min-h-screen bg-white dark:bg-black">
     <!-- Header minimalista -->
     <header class="sticky top-0 z-50 w-full border-b border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-black/80 backdrop-blur-sm">
