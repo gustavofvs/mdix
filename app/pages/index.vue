@@ -258,7 +258,7 @@
                         <UIcon name="i-lucide-check-circle" class="w-5 h-5 text-green-600 dark:text-green-400" />
                         <span class="text-sm font-medium text-green-700 dark:text-green-300">Conversão realizada</span>
                       </div>
-                      <div class="text-4xl font-bold text-neutral-900 dark:text-white mb-2 animate-fade-in-up bg-gradient-to-r from-neutral-900 to-neutral-700 dark:from-white dark:to-neutral-300 bg-clip-text text-transparent">
+                      <div class="text-2xl sm:text-4xl font-bold text-neutral-900 dark:text-white mb-2 animate-fade-in-up bg-gradient-to-r from-neutral-900 to-neutral-700 dark:from-white dark:to-neutral-300 bg-clip-text text-transparent break-words w-full text-balance text-center" style="word-break: break-word;">
                         {{ conversionResult }}
                       </div>
                       <div class="flex items-center justify-center space-x-4 text-xs text-neutral-500 dark:text-neutral-500">
@@ -512,6 +512,11 @@ const fetchBitcoinPrices = async () => {
       }
     })
     
+    if (response.status === 429) {
+      error.value = 'Limite de uso da API atingido. Aguarde alguns minutos e tente novamente.'
+      bitcoinPrice.value = { brl: 0 }
+      return
+    }
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
     }
