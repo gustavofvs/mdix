@@ -3,6 +3,22 @@
     <title>MDIX - Conversor Bitcoin para Real</title>
   </Head>
   <div class="min-h-screen bg-white dark:bg-black">
+    <!-- Botão flutuante para instalar PWA -->
+    <UButton
+      v-if="canInstall"
+      icon="i-lucide-download"
+      color="primary"
+      variant="outline"
+      class="fixed bottom-6 right-6 z-50 shadow-xl"
+      @click="installPWA"
+    >
+      Adicionar à tela inicial
+    </UButton>
+    <div v-if="showIosTip" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-black/90 text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-2 text-sm">
+      <UIcon name="i-lucide-info" class="w-4 h-4 text-primary-400" />
+      Para instalar, toque em <span class="font-bold">Compartilhar</span> e depois <span class="font-bold">Adicionar à Tela de Início</span>.
+      <button class="ml-2 text-primary-400 underline" @click="showIosTip = false">Fechar</button>
+    </div>
     <!-- Header minimalista -->
     <header class="sticky top-0 z-50 w-full border-b border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-black/80 backdrop-blur-sm">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,6 +121,7 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
           <!-- Conversor -->
           <div class="rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-transparent shadow-none hover:shadow-2xl hover:border-primary-400/60 dark:hover:border-primary-400/40 transition-all duration-300 p-8 flex flex-col items-center text-center min-h-[480px] backdrop-blur-[2px]">
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-1 bg-gradient-to-r from-primary-400/30 via-transparent to-primary-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full" />
@@ -472,6 +489,9 @@ const lastUpdateTime = ref('')
 const mobileMenuOpen = ref(false)
 const githubProfile = ref<any>(null)
 const isInputFocused = ref(false)
+const canInstall = ref(false)
+const showIosTip = ref(false)
+let deferredPrompt: any = null
 
 // Proteção: Limite de conversões e cooldown
 const MAX_CONVERSIONS = 10
@@ -591,7 +611,23 @@ const fetchGithubProfile = async () => {
 onMounted(() => {
   fetchBitcoinPrices()
   fetchGithubProfile()
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault()
+    deferredPrompt = e
+    canInstall.value = true
+  })
 })
+
+const installPWA = async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt()
+    const { outcome } = await deferredPrompt.userChoice
+    if (outcome === 'accepted') {
+      canInstall.value = false
+      deferredPrompt = null
+    }
+  }
+}
 </script>
 
 <style scoped>
