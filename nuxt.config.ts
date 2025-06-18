@@ -4,10 +4,40 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/ui',
-    '@nuxt/eslint'
+    '@nuxt/eslint',
+    '@vite-pwa/nuxt'
   ],
 
   css: ['~/assets/css/main.css'],
+
+  pwa: {
+    registerType: 'autoUpdate',
+    manifest: {
+      name: 'MDIX',
+      short_name: 'MDIX',
+      description: 'Conversor minimalista de Bitcoin para Real',
+      theme_color: '#000000',
+      background_color: '#000000',
+      display: 'standalone',
+      icons: [
+        {
+          src: '/icon-192x192.png',
+          sizes: '192x192',
+          type: 'image/png'
+        },
+        {
+          src: '/icon-512x512.png',
+          sizes: '512x512',
+          type: 'image/png'
+        },
+        {
+          src: '/favicon.ico',
+          sizes: '64x64 32x32 24x24 16x16',
+          type: 'image/x-icon'
+        }
+      ]
+    }
+  },
 
   future: {
     compatibilityVersion: 4
