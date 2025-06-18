@@ -4,7 +4,7 @@
 @theme static {
   --font-sans: 'Inter', 'Public Sans', sans-serif;
 
-  /* Paleta neutra e elegante */
+  /* Paleta neutra */
   --color-primary-50: #f8fafc;
   --color-primary-100: #f1f5f9;
   --color-primary-200: #e2e8f0;
@@ -30,7 +30,7 @@
   --color-accent-900: #0c4a6e;
   --color-accent-950: #082f49;
 
-  /* Cores de sucesso sutis */
+  /* Cores de sucesso */
   --color-green-50: #f0fdf4;
   --color-green-100: #dcfce7;
   --color-green-200: #bbf7d0;
@@ -44,7 +44,7 @@
   --color-green-950: #052e16;
 }
 
-/* Estilos globais personalizados */
+/* Estilos globais */
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
@@ -52,7 +52,7 @@ body {
   background-color: var(--color-primary-50);
 }
 
-/* Animações suaves */
+/* Animações */
 .fade-in {
   animation: fadeIn 0.6s ease-in-out;
 }
@@ -68,7 +68,7 @@ body {
   }
 }
 
-/* Gradientes sutis */
+/* Gradientes */
 .gradient-bg {
   background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-accent-50) 100%);
 }
@@ -78,7 +78,7 @@ body {
   border: 1px solid var(--color-primary-200);
 }
 
-/* Efeitos de hover suaves */
+/* Efeitos de hover */
 .hover-lift {
   transition: all 0.3s ease;
 }
