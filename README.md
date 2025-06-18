@@ -1,75 +1,51 @@
-# Nuxt UI Starter
+# MDIX
 
-Look at [Nuxt docs](https://nuxt.com/docs/getting-started/introduction) and [Nuxt UI docs](https://ui.nuxt.com) to learn more.
+Conversor minimalista de Bitcoin para Real
 
-## Setup
+![MDIX Banner](https://raw.githubusercontent.com/gustavofvs/mdix/main/.github/mdix-banner.png)
 
-Make sure to install the dependencies:
+## Sobre o projeto
 
+O **MDIX** é um conversor de Bitcoin para Real brasileiro, com preços em tempo real, design minimalista e foco total na experiência do usuário. Inspirado em referências como Framer, Apple e shadcn/ui, o site utiliza glassmorphism, microinterações e responsividade para entregar uma experiência elegante e moderna.
+
+## Funcionalidades
+- Conversão instantânea de Bitcoin para Real (BRL)
+- Preço atualizado em tempo real via [CoinGecko API](https://www.coingecko.com/pt/api)
+- Limite de conversões por sessão e proteção contra flood
+- Feedback visual e mensagens claras
+- Cards sofisticados, com animações e microinterações
+- Integração com GitHub para exibir o perfil do desenvolvedor
+- Totalmente responsivo e acessível
+
+## Tecnologias
+- [Nuxt 3](https://nuxt.com/) + [Vue 3](https://vuejs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Nuxt UI](https://ui.nuxt.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [CoinGecko API](https://www.coingecko.com/pt/api)
+
+## Design
+- Tema escuro puro, minimalista e sofisticado
+- Glassmorphism, bordas suaves, divisores animados
+- Cards com microinterações, badges e tipografia refinada
+- Sem fundos pesados ou cores chamativas
+
+## Como rodar localmente
 ```bash
-# npm
+# Instale as dependências
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+# Rode o servidor de desenvolvimento
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
+Acesse: [http://localhost:3000](http://localhost:3000)
 
-## Production
+## Contribuição
+Contribuições são bem-vindas! Abra uma issue ou pull request.
 
-Build the application for production:
+## Licença
+MIT
 
-```bash
-# npm
-npm run build
+---
 
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Desenvolvido por [gustavofvs](https://github.com/gustavofvs/mdix)
