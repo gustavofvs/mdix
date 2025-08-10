@@ -5,8 +5,19 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
     '@nuxt/eslint',
-    '@vite-pwa/nuxt'
+    '@vite-pwa/nuxt',
+    '@nuxtjs/fontaine',
+    '@nuxtjs/google-fonts'
   ],
+
+  googleFonts: {
+    families: {
+      Inter: [400, 500, 600, 700, 800, 900]
+    },
+    display: 'swap',
+    prefetch: true,
+    preconnect: true
+  },
 
   css: ['~/assets/css/main.css'],
 
