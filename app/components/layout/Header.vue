@@ -13,6 +13,7 @@
           <a href="#converter" class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Converter</a>
           <a href="#about" class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Sobre</a>
           <a href="https://github.com/gustavofvs" target="_blank" class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">GitHub</a>
+          <UButton v-if="canInstall" @click="installPWA" icon="i-lucide-download" size="sm" color="primary" variant="soft">Instalar App</UButton>
         </nav>
 
         <UButton
@@ -31,6 +32,9 @@
         <a href="#converter" @click="mobileMenuOpen = false" class="block px-3 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Converter</a>
         <a href="#about" @click="mobileMenuOpen = false" class="block px-3 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">Sobre</a>
         <a href="https://github.com/gustavofvs" @click="mobileMenuOpen = false" target="_blank" class="block px-3 py-2 text-sm text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">GitHub</a>
+          <div v-if="canInstall" class="p-2">
+            <UButton @click="installPWA" icon="i-lucide-download" size="sm" color="primary" variant="soft" block>Instalar App</UButton>
+          </div>
       </div>
     </div>
   </header>
@@ -38,6 +42,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { usePWAInstall } from '~/composables/usePWAInstall'
 
 const mobileMenuOpen = ref(false)
+const { canInstall, installPWA } = usePWAInstall()
 </script>
