@@ -1,4 +1,7 @@
 export default defineAppConfig({
+  // Add your own custom config here
+  githubUsername: 'gustavofvs',
+
   // https://ui.nuxt.com/getting-started/theme#design-system
   ui: {
     colors: {
