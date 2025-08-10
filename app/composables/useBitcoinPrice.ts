@@ -12,6 +12,17 @@ const isLoading = ref(false)
 const error = ref<string | null>(null)
 const lastUpdateTime = ref<string | null>(null)
 
+/**
+ * [TEST-ONLY] Resets the shared state of the composable.
+ * This function is exported only for use in the testing environment and will be tree-shaken from the production bundle.
+ */
+export function _resetBitcoinPriceState() {
+  bitcoinPrice.value = 0
+  isLoading.value = false
+  error.value = null
+  lastUpdateTime.value = null
+}
+
 export const useBitcoinPrice = () => {
   /**
    * Fetches the latest Bitcoin price from the CoinGecko API.
@@ -61,8 +72,6 @@ export const useBitcoinPrice = () => {
   }
 
   return {
-    // We use readonly to prevent components from accidentally modifying the state directly.
-    // Mutations should only happen through the functions provided by the composable.
     bitcoinPrice: readonly(bitcoinPrice),
     isLoading: readonly(isLoading),
     error: readonly(error),

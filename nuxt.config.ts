@@ -7,8 +7,13 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@vite-pwa/nuxt',
     '@nuxtjs/fontaine',
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    '@nuxt/image'
   ],
+
+  image: {
+    domains: ['avatars.githubusercontent.com']
+  },
 
   googleFonts: {
     families: {
